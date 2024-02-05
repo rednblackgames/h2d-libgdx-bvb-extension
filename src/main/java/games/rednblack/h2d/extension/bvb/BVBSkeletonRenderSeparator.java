@@ -58,7 +58,7 @@ public class BVBSkeletonRenderSeparator {
             Slot slot = (Slot)drawOrder[i];
             if (!slot.getBone().isActive()) continue;
 
-            BoundEffect boundEffect = skeletonContainer.findEffect(skeleton, slot);
+            BoundEffect boundEffect = skeletonContainer.findEffect(slot);
             if (boundEffect != null && boundEffect.isNested() && boundEffect.isBehind()) {
                 for (ParticleEffectInstance particleEffectInstance : boundEffect.getParticleEffects()) {
                     particleRenderer.render(particleEffectInstance);
@@ -142,7 +142,7 @@ public class BVBSkeletonRenderSeparator {
                 continue;
             }
 
-            BoundEffect boundEffect = skeletonContainer.findEffect(skeleton, slot);
+            BoundEffect boundEffect = skeletonContainer.findEffect(slot);
             if (boundEffect != null && boundEffect.isNested() && boundEffect.isBehind()) {
                 for (ParticleEffectInstance particleEffectInstance : boundEffect.getParticleEffects()) {
                     particleRenderer.render(particleEffectInstance);
@@ -256,7 +256,7 @@ public class BVBSkeletonRenderSeparator {
                 continue;
             }
 
-            BoundEffect boundEffect = skeletonContainer.findEffect(skeleton, slot);
+            BoundEffect boundEffect = skeletonContainer.findEffect(slot);
             if (boundEffect != null && boundEffect.isNested() && boundEffect.isBehind()) {
                 for (ParticleEffectInstance particleEffectInstance : boundEffect.getParticleEffects()) {
                     particleRenderer.render(particleEffectInstance);
