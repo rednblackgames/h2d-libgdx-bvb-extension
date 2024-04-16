@@ -13,6 +13,7 @@ import com.esotericsoftware.spine.Slot;
 import com.esotericsoftware.spine.attachments.*;
 import com.esotericsoftware.spine.utils.SkeletonClipping;
 import com.esotericsoftware.spine.utils.TwoColorPolygonBatch;
+import games.rednblack.h2d.extension.spine.HyperBlendMode;
 import games.rednblack.h2d.extension.spine.SlotRange;
 import games.rednblack.talos.runtime.ParticleEffectInstance;
 import games.rednblack.talos.runtime.bvb.BoundEffect;
@@ -80,7 +81,7 @@ public class BVBSkeletonRenderSeparator {
                         alpha = 0;
                     }
                     blendMode = slotBlendMode;
-                    blendMode.apply(batch, pmaBlendModes);
+                    HyperBlendMode.apply(blendMode, batch, pmaBlendModes);
                 }
 
                 float c = NumberUtils.intToFloatColor((int)alpha << 24 //
@@ -195,7 +196,7 @@ public class BVBSkeletonRenderSeparator {
                         alpha = 0;
                     }
                     blendMode = slotBlendMode;
-                    blendMode.apply(batch, pmaBlendModes);
+                    HyperBlendMode.apply(blendMode, batch, pmaBlendModes);
                 }
 
                 float c = NumberUtils.intToFloatColor((int)alpha << 24 //
@@ -309,7 +310,7 @@ public class BVBSkeletonRenderSeparator {
                         alpha = 0;
                     }
                     blendMode = slotBlendMode;
-                    blendMode.apply(batch, pmaBlendModes);
+                    HyperBlendMode.apply(blendMode, batch, pmaBlendModes);
                 }
 
                 float red = r * color.r * multiplier;
