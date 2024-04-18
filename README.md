@@ -30,9 +30,10 @@ dependencies {
 
 **BVB Runtime compatibility**
 
-| HyperLap2D     | Spine  | Talos Legacy   |
-|----------------|--------|----------------|
-| 0.1.4-SNAPSHOT | 4.1.0  | 1.5.0-SNAPSHOT |
+| HyperLap2D     | Spine  | Talos Legacy |
+|----------------|--------|--------------|
+| 0.1.5-SNAPSHOT | 4.1.0  | 1.5.0        |
+| 0.1.4          | 4.1.0  | 1.5.0        |
 
 ### License
 Spine is a commercial software distributed with its own license, in order to include Spine support in your project, please, be sure to have a valid [Spine License](https://github.com/EsotericSoftware/spine-runtimes)
