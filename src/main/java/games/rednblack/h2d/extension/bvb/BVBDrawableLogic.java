@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import games.rednblack.editor.renderer.components.TintComponent;
+import games.rednblack.editor.renderer.components.TransformComponent;
 import games.rednblack.h2d.extension.spine.SlotRange;
 import games.rednblack.h2d.extension.spine.SpineComponent;
 import games.rednblack.h2d.extension.spine.SpineDrawableLogic;
@@ -26,6 +27,7 @@ public class BVBDrawableLogic extends SpineDrawableLogic {
         normalMap = renderingType == RenderingType.NORMAL_MAP;
 
         SpineComponent spineObjectComponent = spineMapper.get(entity);
+        TransformComponent curTransform = transformComponentMapper.get(entity);
 
         TintComponent tint = tintComponentMapper.get(entity);
 
@@ -38,8 +40,9 @@ public class BVBDrawableLogic extends SpineDrawableLogic {
         float oldAlpha = color.a;
         spineObjectComponent.skeleton.getColor().a *= parentAlpha;
 
-        computeTransform(entity).mulLeft(batch.getTransformMatrix());
-        applyTransform(entity, batch);
+        computeTransform(spineObjectComponent, curTransform).mulLeft(batch.getTransformMatrix());
+        curTransform.oldTransform.set(batch.getTransformMatrix());
+        batch.setTransformMatrix(curTransform.computedTransform);
 
         if (spineObjectComponent.splitRenderingRangeIndex < spineObjectComponent.splitRenderingRange.size) {
             SlotRange slotRange = spineObjectComponent.splitRenderingRange.get(spineObjectComponent.splitRenderingRangeIndex);
@@ -50,7 +53,8 @@ public class BVBDrawableLogic extends SpineDrawableLogic {
 
             spineObjectComponent.splitRenderingRangeIndex++;
         }
-        resetTransform(entity, batch);
+
+        batch.setTransformMatrix(curTransform.oldTransform);
         batch.setBlendFunctionSeparate(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA, GL20.GL_ONE_MINUS_DST_ALPHA, GL20.GL_ONE);
 
         color.a = oldAlpha;
