@@ -32,7 +32,7 @@ dependencies {
 
 | HyperLap2D     | Spine | Talos Legacy   |
 |----------------|-------|----------------|
-| 0.1.5-SNAPSHOT | 4.2.0 | 1.5.1-SNAPSHOT |
+| 0.1.5-SNAPSHOT | 4.2.7 | 1.5.1-SNAPSHOT |
 | 0.1.4          | 4.1.0 | 1.5.0          |
 
 ### License
