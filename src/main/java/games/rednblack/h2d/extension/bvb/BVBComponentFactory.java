@@ -3,7 +3,7 @@ package games.rednblack.h2d.extension.bvb;
 import com.artemis.ComponentMapper;
 import com.artemis.EntityTransmuterFactory;
 import com.artemis.World;
-import games.rednblack.editor.renderer.box2dLight.RayHandler;
+import games.rednblack.editor.renderer.lights.RayHandler;
 import games.rednblack.editor.renderer.components.normal.NormalMapRendering;
 import games.rednblack.editor.renderer.resources.IResourceRetriever;
 import games.rednblack.h2d.extension.spine.SpineComponent;
