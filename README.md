@@ -23,7 +23,7 @@ dependencies {
 <dependency>
   <groupId>games.rednblack.editor</groupId>
   <artifactId>libgdx-bvb-extension</artifactId>
-  <version>0.1.6</version>
+  <version>0.1.7</version>
   <type>pom</type>
 </dependency>
 ```
@@ -32,7 +32,7 @@ dependencies {
 
 | HyperLap2D | Spine  | Talos Legacy |
 |------------|--------|--------------|
-| 0.1.7      | 4.2.10 | 1.5.2        |
+| 0.1.7      | 4.2.10 | 1.5.3        |
 | 0.1.6      | 4.2.7  | 1.5.2        |
 | 0.1.5      | 4.2.7  | 1.5.1        |
 | 0.1.4      | 4.1.0  | 1.5.0        |
