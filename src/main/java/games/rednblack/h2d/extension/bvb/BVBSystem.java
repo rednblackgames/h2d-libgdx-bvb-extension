@@ -1,7 +1,7 @@
 package games.rednblack.h2d.extension.bvb;
 
-import com.artemis.ComponentMapper;
-import com.artemis.annotations.All;
+import games.rednblack.editor.renderer.ecs.ComponentMapper;
+import games.rednblack.editor.renderer.ecs.annotations.All;
 import games.rednblack.h2d.extension.spine.SpineComponent;
 import games.rednblack.h2d.extension.spine.SpineSystem;
 
@@ -16,6 +16,6 @@ public class BVBSystem extends SpineSystem {
         BVBComponent bvbComponent = bvbCM.get(entity);
         if (bvbComponent == null) return;
 
-        bvbComponent.skeletonContainer.update(world.getDelta());
+        bvbComponent.skeletonContainer.update(engine.getDelta());
     }
 }

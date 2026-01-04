@@ -1,8 +1,8 @@
 package games.rednblack.h2d.extension.bvb;
 
-import com.artemis.ComponentMapper;
-import com.artemis.EntityTransmuterFactory;
-import com.artemis.World;
+import games.rednblack.editor.renderer.ecs.ComponentMapper;
+import games.rednblack.editor.renderer.ecs.EntityTransmuterFactory;
+import games.rednblack.editor.renderer.ecs.Engine;
 import games.rednblack.editor.renderer.lights.RayHandler;
 import games.rednblack.editor.renderer.components.normal.NormalMapRendering;
 import games.rednblack.editor.renderer.resources.IResourceRetriever;
@@ -14,7 +14,7 @@ public class BVBComponentFactory extends SpineComponentFactory {
     protected ResourceManagerParticlePoolProvider resourceManagerParticlePoolProvider;
 
     @Override
-    public void injectDependencies(World engine, RayHandler rayHandler, com.badlogic.gdx.physics.box2d.World world, IResourceRetriever rm) {
+    public void injectDependencies(Engine engine, RayHandler rayHandler, com.badlogic.gdx.physics.box2d.World world, IResourceRetriever rm) {
         super.injectDependencies(engine, rayHandler, world, rm);
 
         transmuter = new EntityTransmuterFactory(engine)

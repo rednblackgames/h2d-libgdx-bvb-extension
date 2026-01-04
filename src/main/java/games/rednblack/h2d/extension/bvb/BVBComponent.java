@@ -1,6 +1,6 @@
 package games.rednblack.h2d.extension.bvb;
 
-import com.artemis.PooledComponent;
+import games.rednblack.editor.renderer.ecs.PooledComponent;
 
 public class BVBComponent extends PooledComponent {
 
